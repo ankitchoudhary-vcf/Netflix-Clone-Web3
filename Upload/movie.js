@@ -21,23 +21,21 @@ for (let i = 0; i < media.length; i++) {
 }
 
 Promise.all(promises).then(() => {
-  axios.post(
-    "https://deep-index.moralis.io/api/v2/ipfs/uploadFolder",
-    ipfsArray,
-    {
+  axios
+    .post("https://deep-index.moralis.io/api/v2/ipfs/uploadFolder", ipfsArray, {
       headers: {
         "X-API-KEY":
-          "<Your API KEY>",
+          "6i5efDFDKSV0WiTz11aY9nZzMwmaumxLud3Qp0AI3qlPbF6kyxWfKLkpMF0ceJp9",
         "Content-Type": "application/json",
         accept: "application/json",
       },
       maxContentLength: Infinity,
       maxBodyLength: Infinity,
-    }
-  ).then((res) => {
-    console.log(res.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+    })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
